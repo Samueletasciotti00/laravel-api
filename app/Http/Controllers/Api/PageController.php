@@ -30,6 +30,16 @@ class PageController extends Controller
 
     public function projectBySlug($slug) { // Passiamo lo slug
 
-        
+        // Prendo un elemento dal DB che ha lo slug passato nella funzione projectBySlug($slug)
+        $project = Project::where('slug',$slug)->with('category', 'tags')->first();
+
+        // Validazione della chiamata
+        if($project){
+            $success = true;
+        } else {
+            $success = false;
+        }
+
+        return response()->json(compact('project','success'));
     }
 }
