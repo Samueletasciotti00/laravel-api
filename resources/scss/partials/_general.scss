@@ -1,0 +1,38 @@
+// DEFAULT
+
+* {
+    //ALL
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+a {
+    // Links
+    text-decoration: none;
+    color: #ffffff;
+
+    // Hover
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#main-view {
+    // Struttura centro
+    display: flex;
+}
+
+#page {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.thumb{
+    width: 150px;
+}
