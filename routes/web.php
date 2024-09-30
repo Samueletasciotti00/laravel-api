@@ -19,29 +19,29 @@ use App\Models\Category;
 |
 */
 
-Route::get('/',[PageController::class, 'index'])->name('home');
+Route::get('/',[PageController::class, 'index']);
 
 // Route login
-Route::middleware(['auth', 'verified'])
-    ->prefix('admin')
-    ->name('admin.')
-    ->group(function(){
-        Route::get('/', [DashboardController::class, 'index'])->name('home');
+// Route::middleware(['auth', 'verified'])
+//     ->prefix('admin')
+//     ->name('admin.')
+//     ->group(function(){
+//         Route::get('/', [DashboardController::class, 'index'])->name('home');
 
-        // Project controller
-        Route::resource('project', ProjectController::class);
-        Route::resource('category', CategoryController::class);
-    });
+//         // Project controller
+//         Route::resource('project', ProjectController::class);
+//         Route::resource('category', CategoryController::class);
+//     });
     
 
-Route::middleware('auth')
-->prefix('profile')
-->name('profile.')
-->group(function () {
-    Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')
+// ->prefix('profile')
+// ->name('profile.')
+// ->group(function () {
+//     Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 
 
