@@ -19,4 +19,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+
+// Funzione di index
 Route::get('/',[PageController::class,'index']);
+
+//
+Route::get('/project-by-slug/{slug}',[PageController::class,'projectBySlug']);
