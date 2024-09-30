@@ -23,5 +23,11 @@ use Illuminate\Support\Facades\Route;
 // Funzione di index
 Route::get('/',[PageController::class,'index']);
 
-//
+// Funzione di ricerca per SLUG
 Route::get('/project-by-slug/{slug}',[PageController::class,'projectBySlug']);
+
+// Funzione di ricerca per TAG
+Route::get('/tags',[PageController::class,'tags']);
+
+// Funzione di ricerca per CATEGORIA
+Route::get('/categoryes',[PageController::class,'categoryes']);
